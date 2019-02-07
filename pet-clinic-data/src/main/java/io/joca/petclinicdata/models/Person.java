@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Created by Joao Beraardo on Feb 06 2019
  */
-public class Person {
+public class Person extends BaseEntity {
     private String firstname;
     private String lastname;
 

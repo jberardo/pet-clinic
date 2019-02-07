@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Created by Joao Beraardo on Feb 06 2019
  */
-public class Pet {
+public class Pet extends BaseEntity {
     private PetType petType;
     private Owner owner;
     private LocalDate birthdate;
