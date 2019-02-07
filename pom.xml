@@ -99,5 +99,6 @@
     <scm>
         <developerConnection>scm:git:git@github.com:jberardo/pet-clinic.git</developerConnection>
       <tag>HEAD</tag>
-</scm>
+    </scm>
+    
 </project>
