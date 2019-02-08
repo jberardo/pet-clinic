@@ -1,4 +1,4 @@
-package io.joca.petclinicdata.models;
+package io.joca.petclinic.data.models;
 
 import java.io.Serializable;
 

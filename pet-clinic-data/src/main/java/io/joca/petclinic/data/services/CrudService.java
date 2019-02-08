@@ -1,4 +1,4 @@
-package io.joca.petclinicdata.services;
+package io.joca.petclinic.data.services;
 
 import java.util.Set;
 

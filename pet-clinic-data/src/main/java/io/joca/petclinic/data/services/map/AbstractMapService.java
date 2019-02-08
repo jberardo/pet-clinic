@@ -1,4 +1,4 @@
-package io.joca.petclinicdata.services.map;
+package io.joca.petclinic.data.services.map;
 
 import java.util.HashMap;
 import java.util.HashSet;

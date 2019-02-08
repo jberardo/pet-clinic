@@ -1,14 +1,14 @@
-package io.joca.petclinicdata.bootstrap;
+package io.joca.petclinic.web.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import io.joca.petclinicdata.models.Owner;
-import io.joca.petclinicdata.models.Vet;
-import io.joca.petclinicdata.services.OwnerService;
-import io.joca.petclinicdata.services.VetService;
-import io.joca.petclinicdata.services.map.OwnerServiceMap;
-import io.joca.petclinicdata.services.map.VetServiceMap;
+import io.joca.petclinic.data.models.Owner;
+import io.joca.petclinic.data.models.Vet;
+import io.joca.petclinic.data.services.OwnerService;
+import io.joca.petclinic.data.services.VetService;
+import io.joca.petclinic.data.services.map.OwnerServiceMap;
+import io.joca.petclinic.data.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {

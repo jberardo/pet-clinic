@@ -1,4 +1,4 @@
-package io.joca.petclinicweb.controllers;
+package io.joca.petclinic.web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
