@@ -3,12 +3,12 @@ package io.joca.petclinicdata.services.map;
 import java.util.Set;
 
 import io.joca.petclinicdata.models.Owner;
-import io.joca.petclinicdata.services.CrudService;
+import io.joca.petclinicdata.services.OwnerService;
 
 /**
  * Created by Joao Berardo on Feb 07 2019
  */
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -34,5 +34,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     public void deleteById(Long id) {
         super.deleteById(id);
     }
+
+	@Override
+	public Owner findByLastName(String lastname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

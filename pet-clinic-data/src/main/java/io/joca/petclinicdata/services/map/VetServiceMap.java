@@ -3,12 +3,12 @@ package io.joca.petclinicdata.services.map;
 import java.util.Set;
 
 import io.joca.petclinicdata.models.Vet;
-import io.joca.petclinicdata.services.CrudService;
+import io.joca.petclinicdata.services.VetService;
 
 /**
  * Created by Joao Berardo on Feb 07 2019
  */
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();

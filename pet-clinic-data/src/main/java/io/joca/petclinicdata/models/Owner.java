@@ -5,4 +5,11 @@ package io.joca.petclinicdata.models;
  */
 public class Owner extends Person {
 
+	public Owner() {
+		super("", "");
+	}
+	
+	public Owner(String firstname, String lastname) {
+		super(firstname, lastname);
+	}
 }
