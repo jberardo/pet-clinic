@@ -7,8 +7,6 @@ import io.joca.petclinic.data.models.Owner;
 import io.joca.petclinic.data.models.Vet;
 import io.joca.petclinic.data.services.OwnerService;
 import io.joca.petclinic.data.services.VetService;
-import io.joca.petclinic.data.services.map.OwnerServiceMap;
-import io.joca.petclinic.data.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -16,9 +14,9 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	public DataLoader() {
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 	
 	@Override

@@ -1,13 +1,16 @@
-package io.joca.petclinicdata.services.map;
+package io.joca.petclinic.data.services.map;
 
 import java.util.Set;
 
-import io.joca.petclinicdata.models.Pet;
-import io.joca.petclinicdata.services.CrudService;
+import org.springframework.stereotype.Service;
+
+import io.joca.petclinic.data.models.Pet;
+import io.joca.petclinic.data.services.CrudService;
 
 /**
  * Created by Joao Berardo on Feb 07 2019
  */
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
     @Override
     public Set<Pet> findAll() {

@@ -1,13 +1,16 @@
-package io.joca.petclinicdata.services.map;
+package io.joca.petclinic.data.services.map;
 
 import java.util.Set;
 
-import io.joca.petclinicdata.models.Owner;
-import io.joca.petclinicdata.services.OwnerService;
+import org.springframework.stereotype.Service;
+
+import io.joca.petclinic.data.models.Owner;
+import io.joca.petclinic.data.services.OwnerService;
 
 /**
  * Created by Joao Berardo on Feb 07 2019
  */
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
@@ -40,5 +43,4 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
