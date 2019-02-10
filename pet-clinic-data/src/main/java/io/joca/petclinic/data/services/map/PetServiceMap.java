@@ -5,13 +5,13 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import io.joca.petclinic.data.models.Pet;
-import io.joca.petclinic.data.services.CrudService;
+import io.joca.petclinic.data.services.PetService;
 
 /**
  * Created by Joao Berardo on Feb 07 2019
  */
 @Service
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
