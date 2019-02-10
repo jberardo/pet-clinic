@@ -15,4 +15,9 @@ public class IndexController {
 	public String welcome() {
 		return "welcome";
 	}
+	
+	@RequestMapping("/oups")
+	public String oups() {
+		return "notimplemented";
+	}
 }
