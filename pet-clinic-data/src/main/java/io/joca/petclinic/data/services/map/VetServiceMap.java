@@ -4,7 +4,9 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
+import io.joca.petclinic.data.models.Specialty;
 import io.joca.petclinic.data.models.Vet;
+import io.joca.petclinic.data.services.SpecialtyService;
 import io.joca.petclinic.data.services.VetService;
 
 /**
@@ -12,7 +14,15 @@ import io.joca.petclinic.data.services.VetService;
  */
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
-    @Override
+	
+	private SpecialtyService specialtyService;
+	
+    public VetServiceMap(SpecialtyService specialtyService) {
+    	super();
+    	this.specialtyService = specialtyService;
+    }
+    
+@Override
     public Set<Vet> findAll() {
         return super.findAll();
     }
@@ -24,6 +34,16 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet vet) {
+    	
+    	if (vet.getSpecialties().size() > 0) {
+    		vet.getSpecialties().forEach(s -> {
+    			if (s.getId() == null) {
+    				Specialty savedSpecialty = specialtyService.save(s);
+    				savedSpecialty.setId(s.getId());
+    			}
+    		});
+    	}
+    	
         return super.save(vet);
     }
 
