@@ -1,12 +1,12 @@
 package io.joca.petclinic.data.models;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 /**
  * Created by Joao Beraardo on Feb 06 2019
  */
 public class Pet extends BaseEntity {
+	
     private PetType petType;
     private Owner owner;
     private LocalDate birthdate;
@@ -59,30 +59,4 @@ public class Pet extends BaseEntity {
         this.birthdate = birthdate;
         return this;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Pet)) {
-            return false;
-        }
-        Pet pet = (Pet) o;
-        return Objects.equals(petType, pet.petType) && Objects.equals(owner, pet.owner) && Objects.equals(birthdate, pet.birthdate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(petType, owner, birthdate);
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " petType='" + getPetType() + "'" +
-            ", owner='" + getOwner() + "'" +
-            ", birthdate='" + getBirthdate() + "'" +
-            "}";
-    }
-
 }
