@@ -10,7 +10,10 @@ import io.joca.petclinic.data.services.SpecialtyService;
 import io.joca.petclinic.data.services.VetService;
 
 /**
- * Created by Joao Berardo on Feb 07 2019
+ * 
+ * @author Joao Berardo
+ * @since Feb 07 2019
+ *
  */
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {

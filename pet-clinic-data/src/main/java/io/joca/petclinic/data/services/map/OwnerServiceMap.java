@@ -2,8 +2,6 @@ package io.joca.petclinic.data.services.map;
 
 import java.util.Set;
 
-import javax.management.RuntimeErrorException;
-
 import org.springframework.stereotype.Service;
 
 import io.joca.petclinic.data.models.Owner;
@@ -13,7 +11,10 @@ import io.joca.petclinic.data.services.PetService;
 import io.joca.petclinic.data.services.PetTypeService;
 
 /**
- * Created by Joao Berardo on Feb 07 2019
+ * 
+ * @author Joao Berardo
+ * @since Feb 07 2019
+ *
  */
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {

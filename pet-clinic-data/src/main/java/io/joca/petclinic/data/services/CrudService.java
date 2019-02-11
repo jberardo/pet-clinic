@@ -3,9 +3,10 @@ package io.joca.petclinic.data.services;
 import java.util.Set;
 
 /**
- * Created by Joao Berardo on Feb 07 2019
- * @param <T> Type
- * @param <ID> Id Type
+ * 
+ * @author Joao Berardo
+ * @since Feb 07 2019
+ *
  */
 public interface CrudService<T, ID> {
     Set<T> findAll();

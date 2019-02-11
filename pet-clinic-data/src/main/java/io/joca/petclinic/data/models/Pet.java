@@ -3,7 +3,10 @@ package io.joca.petclinic.data.models;
 import java.time.LocalDate;
 
 /**
- * Created by Joao Beraardo on Feb 06 2019
+ * 
+ * @author Joao Berardo
+ * @since Feb 06 2019
+ *
  */
 public class Pet extends BaseEntity {
 	

@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service;
 import io.joca.petclinic.data.models.PetType;
 import io.joca.petclinic.data.services.PetTypeService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb 07 2019
+ *
+ */
 @Service
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
@@ -33,5 +39,4 @@ public class PetTypeMapService extends AbstractMapService<PetType, Long> impleme
     public void deleteById(Long id) {
         super.deleteById(id);
     }
-
 }

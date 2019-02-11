@@ -6,14 +6,16 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import javax.management.RuntimeErrorException;
-
 import io.joca.petclinic.data.models.BaseEntity;
 
 /**
- * Created by Joao Berardo on Feb 07 2019
+ * 
+ * @author Joao Berardo
+ * @since Feb 07 2019
+ *
  */
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
+	
     protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll() {

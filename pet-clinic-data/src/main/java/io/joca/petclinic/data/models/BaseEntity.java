@@ -2,6 +2,12 @@ package io.joca.petclinic.data.models;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb 06 2019
+ *
+ */
 public class BaseEntity implements Serializable {
 	
     private Long id;

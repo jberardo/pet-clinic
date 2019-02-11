@@ -8,7 +8,10 @@ import io.joca.petclinic.data.models.Pet;
 import io.joca.petclinic.data.services.PetService;
 
 /**
- * Created by Joao Berardo on Feb 07 2019
+ * 
+ * @author Joao Berardo
+ * @since Feb 07 2019
+ *
  */
 @Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {

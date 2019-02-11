@@ -2,6 +2,12 @@ package io.joca.petclinic.data.models;
 
 import java.time.LocalDate;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb 06 2019
+ *
+ */
 public class Visit extends BaseEntity {
 
 	private LocalDate date;

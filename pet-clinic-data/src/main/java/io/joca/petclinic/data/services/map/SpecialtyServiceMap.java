@@ -9,8 +9,8 @@ import io.joca.petclinic.data.services.SpecialtyService;
 
 /**
  * 
- * @author joca
- * @since Feb 09 2019
+ * @author Joao Berardo
+ * @since Feb 07 2019
  *
  */
 @Service
