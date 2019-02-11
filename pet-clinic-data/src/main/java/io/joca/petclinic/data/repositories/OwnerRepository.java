@@ -11,4 +11,5 @@ import io.joca.petclinic.data.models.Owner;
  *
  */
 public interface OwnerRepository extends CrudRepository<Owner, Long> {
+	Owner findByLastname(String lastName);
 }
