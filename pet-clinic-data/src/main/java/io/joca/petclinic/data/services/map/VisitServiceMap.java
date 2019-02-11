@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service;
 import io.joca.petclinic.data.models.Visit;
 import io.joca.petclinic.data.services.VisitService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb 11 2019
+ *
+ */
 @Service
 public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService {
 

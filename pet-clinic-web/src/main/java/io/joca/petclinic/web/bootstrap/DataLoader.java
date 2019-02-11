@@ -10,10 +10,12 @@ import io.joca.petclinic.data.models.Pet;
 import io.joca.petclinic.data.models.PetType;
 import io.joca.petclinic.data.models.Specialty;
 import io.joca.petclinic.data.models.Vet;
+import io.joca.petclinic.data.models.Visit;
 import io.joca.petclinic.data.services.OwnerService;
 import io.joca.petclinic.data.services.PetTypeService;
 import io.joca.petclinic.data.services.SpecialtyService;
 import io.joca.petclinic.data.services.VetService;
+import io.joca.petclinic.data.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -22,12 +24,14 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialtyService specialtyService;
+	private final VisitService visitService;
 	
-	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialtyService = specialtyService;
+		this.visitService = visitService;
 	}
 	
 	@Override
@@ -109,5 +113,13 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Loaded Vets....");
+        
+        Visit catVisit = new Visit();
+        catVisit.setPet(pet2);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+        visitService.save(catVisit);
+        
+        System.out.println("Loaded Visits....");
 	}
 }

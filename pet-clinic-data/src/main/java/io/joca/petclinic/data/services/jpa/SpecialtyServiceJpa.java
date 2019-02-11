@@ -10,6 +10,12 @@ import io.joca.petclinic.data.models.Specialty;
 import io.joca.petclinic.data.repositories.SpecialtyRepository;
 import io.joca.petclinic.data.services.SpecialtyService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb 11 2019
+ *
+ */
 @Service
 @Profile("jpa")
 public class SpecialtyServiceJpa implements SpecialtyService {
