@@ -10,11 +10,17 @@ import io.joca.petclinic.data.models.PetType;
 import io.joca.petclinic.data.repositories.PetTypeRepository;
 import io.joca.petclinic.data.services.PetTypeService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb 11 2019
+ *
+ */
 @Service
 @Profile("jpa")
 public class PetTypeServiceJpa implements PetTypeService {
 
-	private PetTypeRepository petTypeRepository;
+	private final PetTypeRepository petTypeRepository;
 
 	public PetTypeServiceJpa(PetTypeRepository petTypeRepository) {
 		super();
