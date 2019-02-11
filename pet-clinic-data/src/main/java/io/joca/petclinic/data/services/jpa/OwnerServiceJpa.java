@@ -10,6 +10,12 @@ import io.joca.petclinic.data.models.Owner;
 import io.joca.petclinic.data.repositories.OwnerRepository;
 import io.joca.petclinic.data.services.OwnerService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb 11 2019
+ *
+ */
 @Service
 @Profile("jpa")
 public class OwnerServiceJpa implements OwnerService {

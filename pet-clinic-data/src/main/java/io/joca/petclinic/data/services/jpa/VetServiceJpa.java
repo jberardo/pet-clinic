@@ -20,7 +20,7 @@ import io.joca.petclinic.data.services.VetService;
 @Profile("jpa")
 public class VetServiceJpa implements VetService {
 
-	private VetRepository vetRepository;
+	private final VetRepository vetRepository;
 	
 	public VetServiceJpa(io.joca.petclinic.data.repositories.VetRepository vetRepository) {
 		super();

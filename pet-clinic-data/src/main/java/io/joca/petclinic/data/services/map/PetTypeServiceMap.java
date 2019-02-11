@@ -14,7 +14,7 @@ import io.joca.petclinic.data.services.PetTypeService;
  *
  */
 @Service
-public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
+public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
         return super.findAll();
