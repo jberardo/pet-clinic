@@ -2,6 +2,7 @@ package io.joca.petclinic.data.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import io.joca.petclinic.data.models.PetType;
@@ -14,6 +15,7 @@ import io.joca.petclinic.data.services.PetTypeService;
  *
  */
 @Service
+@Profile({ "default", "map" })
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {

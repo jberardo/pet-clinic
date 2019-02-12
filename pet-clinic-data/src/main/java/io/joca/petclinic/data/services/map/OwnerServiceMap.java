@@ -18,6 +18,7 @@ import io.joca.petclinic.data.services.PetTypeService;
  *
  */
 @Service
+@Profile({ "default", "map" })
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	private final PetTypeService petTypeService;

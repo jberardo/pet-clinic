@@ -2,6 +2,7 @@ package io.joca.petclinic.data.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import io.joca.petclinic.data.models.Specialty;
@@ -16,6 +17,7 @@ import io.joca.petclinic.data.services.VetService;
  *
  */
 @Service
+@Profile({ "default", "map" })
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 	
 	private SpecialtyService specialtyService;

@@ -20,38 +20,42 @@ import io.joca.petclinic.data.services.VetService;
 @Profile("jpa")
 public class VetServiceJpa implements VetService {
 
-	private final VetRepository vetRepository;
 	
-	public VetServiceJpa(io.joca.petclinic.data.repositories.VetRepository vetRepository) {
-		super();
-		this.vetRepository = vetRepository;
-	}
+//	private final VetRepository vetRepository;
+//	
+//	public VetServiceJpa(VetRepository vetRepository) {
+//		super();
+//		this.vetRepository = vetRepository;
+//	}
 
 	@Override
 	public Set<Vet> findAll() {
-		Set<Vet> vets = new HashSet<Vet>();
-		vetRepository.findAll().iterator().forEachRemaining(vets::add);
-		
-		return vets;
+//		Set<Vet> vets = new HashSet<Vet>();
+//		vetRepository.findAll().iterator().forEachRemaining(vets::add);
+//		
+//		return vets;
+		return null;
 	}
 
 	@Override
 	public Vet findById(Long id) {
-		return vetRepository.findById(id).orElse(null);
+		//return vetRepository.findById(id).orElse(null);
+		return null;
 	}
 
 	@Override
 	public Vet save(Vet vet) {
-		return vetRepository.save(vet);
+		//return vetRepository.save(vet);
+		return null;
 	}
 
 	@Override
 	public void delete(Vet vet) {
-		vetRepository.delete(vet);
+		//vetRepository.delete(vet);
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		vetRepository.deleteById(id);
+		//vetRepository.deleteById(id);
 	}
 }
