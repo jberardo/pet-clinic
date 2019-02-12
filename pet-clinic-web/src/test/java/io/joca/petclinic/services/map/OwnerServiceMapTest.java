@@ -20,17 +20,20 @@ class OwnerServiceMapTest {
 	private final Long OWNER_ID = 1L;
 	private final String OWNER_NAME = "John";
 	private final String OWNER_LNAME = "Doe";
+	
+	
 	OwnerServiceMap service;
 	
 	@BeforeEach
 	void setUp() throws Exception {
 		service = new OwnerServiceMap(new PetTypeServiceMap(), new PetServiceMap());
 		
-		service.save(Owner.builder()
-						.id(OWNER_ID)
-						.firstname(OWNER_NAME)
-						.lastname(OWNER_LNAME)
-						.build());
+		Owner o = new Owner();
+		o.setId(OWNER_ID);
+		o.setFirstname(OWNER_NAME);
+		o.setLastname(OWNER_LNAME);
+		
+		service.save(o);
 	}
 
 	@Test
@@ -49,14 +52,14 @@ class OwnerServiceMapTest {
 
 	@Test
 	void testSaveOwnerExistingId() {
-		Owner owner = Owner.builder()
-				.id(OWNER_ID)
-				.firstname(OWNER_NAME)
-				.build();
+		Owner o = new Owner();
+		o.setId(OWNER_ID);
+		o.setFirstname(OWNER_NAME);
+		o.setLastname(OWNER_LNAME);
 		
-		Owner saved = service.save(owner);
+		Owner saved = service.save(o);
 		
-		assertEquals(saved, owner);
+		assertEquals(saved, o);
 		assertEquals(saved.getId(), OWNER_ID);
 	}
 	
