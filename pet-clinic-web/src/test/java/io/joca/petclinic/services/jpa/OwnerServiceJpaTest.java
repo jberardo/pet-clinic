@@ -92,7 +92,7 @@ class OwnerServiceJpaTest {
 		
 		service.deleteById(1L);
 		
-		verify(repository).deleteById(anyLong());
+		verify(repository, times(1)).deleteById(anyLong());
 	}
 
 	@Test
@@ -103,6 +103,6 @@ class OwnerServiceJpaTest {
 
 		assertNotNull(smith);
 		assertEquals(LAST_NAME, smith.getLastname());
-		verify(repository).findByLastname(any());
+		verify(repository, times(1)).findByLastname(any());
 	}
 }
