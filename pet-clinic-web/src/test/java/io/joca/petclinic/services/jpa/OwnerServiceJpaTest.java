@@ -17,6 +17,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import io.joca.petclinic.models.Owner;
 import io.joca.petclinic.repositories.OwnerRepository;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb. 12, 2019
+ *
+ */
 @ExtendWith(MockitoExtension.class)
 class OwnerServiceJpaTest {
 
@@ -28,11 +34,14 @@ class OwnerServiceJpaTest {
 	@Mock
 	OwnerRepository repository;
 	
-	Owner owner;
+	Owner returnOwner;
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		owner = Owner.builder().id(1L).lastname(LAST_NAME).build();
+		Owner o = new Owner();
+		o.setId(1L);
+		o.setLastname(LAST_NAME);
+		returnOwner = o;
 	}
 
 	@Test
@@ -53,7 +62,7 @@ class OwnerServiceJpaTest {
 	@Test
 	void testFindById() {
 		
-		when(repository.findById(anyLong())).thenReturn(Optional.of(owner));
+		when(repository.findById(anyLong())).thenReturn(Optional.of(returnOwner));
 		
 		Owner o = service.findById(1L);
 		
@@ -73,7 +82,7 @@ class OwnerServiceJpaTest {
 	void testSave() {
 		
 		Owner ownerToSave = Owner.builder().id(1L).build();
-		when(repository.save(any())).thenReturn(owner);
+		when(repository.save(any())).thenReturn(returnOwner);
 		Owner saved = repository.save(ownerToSave);
 		
 		assertNotNull(saved);
@@ -82,7 +91,7 @@ class OwnerServiceJpaTest {
 	@Test
 	void testDelete() {
 		
-		service.delete(owner);
+		service.delete(returnOwner);
 		
 		verify(repository).delete(any());
 	}
@@ -98,7 +107,7 @@ class OwnerServiceJpaTest {
 	@Test
 	void testFindByLastName() {
 
-		when(repository.findByLastname(any())).thenReturn(owner);
+		when(repository.findByLastname(any())).thenReturn(returnOwner);
 		Owner smith = service.findByLastName(LAST_NAME);
 
 		assertNotNull(smith);
