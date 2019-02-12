@@ -43,26 +43,20 @@ public class DataLoader implements CommandLineRunner {
 	}
 
 	private void loadData() {
+        PetType savedDogPetType = petTypeService.save(
+        		PetType.builder().name("Dog").build());
 
-        PetType dog = new PetType();
-        dog.setName("Dog");
-        PetType savedDogPetType = petTypeService.save(dog);
+        PetType savedCatPetType = petTypeService.save(
+        		PetType.builder().name("Cat").build());
 
-        PetType cat = new PetType();
-        cat.setName("Cat");
-        PetType savedCatPetType = petTypeService.save(cat);
+        Specialty savedRadiology = specialtyService.save(
+        		Specialty.builder().description("Radiology").build());
 
-        Specialty radiology = new Specialty();
-        radiology.setDescription("Radiology");
-        Specialty savedRadiology = specialtyService.save(radiology);
+        Specialty savedSurgery = specialtyService.save(
+        		Specialty.builder().description("Surgery").build());
 
-        Specialty surgery = new Specialty();
-        surgery.setDescription("Surgery");
-        Specialty savedSurgery = specialtyService.save(surgery);
-
-        Specialty dentistry = new Specialty();
-        dentistry.setDescription("dentistry");
-        Specialty savedDentistry = specialtyService.save(dentistry);
+        Specialty savedDentistry = specialtyService.save(
+        		Specialty.builder().description("Dentistry").build());
 
         Owner owner1 = new Owner();
         owner1.setFirstname("Michael");
@@ -70,12 +64,13 @@ public class DataLoader implements CommandLineRunner {
         owner1.setAddress("123 Brickerel");
         owner1.setCity("Miami");
         owner1.setPhone("1231231234");
-
+        
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedDogPetType);
         mikesPet.setOwner(owner1);
         mikesPet.setBirthdate(LocalDate.now());
         mikesPet.setName("Rosco");
+        
         owner1.getPets().add(mikesPet);
 
         ownerService.save(owner1);

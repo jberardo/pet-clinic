@@ -12,12 +12,24 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import io.joca.petclinic.models.Owner.OwnerBuilder;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * 
  * @author Joao Berardo
  * @since Feb 06 2019
  *
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity {
@@ -38,69 +50,4 @@ public class Pet extends BaseEntity {
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
-
-    public Pet() {
-    }
-
-    public Pet(PetType petType, Owner owner, LocalDate birthdate) {
-        this.petType = petType;
-        this.owner = owner;
-        this.birthdate = birthdate;
-    }
-    
-
-    public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public PetType getPetType() {
-        return this.petType;
-    }
-
-    public void setPetType(PetType petType) {
-        this.petType = petType;
-    }
-
-    public Owner getOwner() {
-        return this.owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public LocalDate getBirthdate() {
-        return this.birthdate;
-    }
-
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public Pet petType(PetType petType) {
-        this.petType = petType;
-        return this;
-    }
-
-    public Pet owner(Owner owner) {
-        this.owner = owner;
-        return this;
-    }
-
-    public Pet birthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
-        return this;
-    }
-
-	public Set<Visit> getVisits() {
-		return visits;
-	}
-
-	public void setVisits(Set<Visit> visits) {
-		this.visits = visits;
-	}
 }
