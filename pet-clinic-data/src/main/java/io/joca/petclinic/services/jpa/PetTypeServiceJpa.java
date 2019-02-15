@@ -31,7 +31,7 @@ public class PetTypeServiceJpa implements PetTypeService {
 	public Set<PetType> findAll() {
 		
 		Set<PetType> petTypes = new HashSet<>();
-		petTypes.iterator().forEachRemaining(petTypes::add);
+		petTypeRepository.findAll().forEach(petTypes::add);
 		
 		return petTypes;
 	}

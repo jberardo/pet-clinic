@@ -24,6 +24,12 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import io.joca.petclinic.models.Owner;
 import io.joca.petclinic.services.OwnerService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb. 12, 2019
+ *
+ */
 @ExtendWith(MockitoExtension.class)
 class OwnerControllerTest {
 
