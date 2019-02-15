@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import io.joca.petclinic.models.Pet;
 import io.joca.petclinic.repositories.PetRepository;
 import io.joca.petclinic.services.PetService;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 
@@ -16,6 +17,7 @@ import io.joca.petclinic.services.PetService;
  * @since Feb 11 2019
  *
  */
+@Slf4j
 @Service
 @Profile("jpa")
 public class PetServiceJpa implements PetService {
