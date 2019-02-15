@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import io.joca.petclinic.services.VetService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb. 07, 2019
+ *
+ */
 @RequestMapping("/vets")
 @Controller
 public class VetController {

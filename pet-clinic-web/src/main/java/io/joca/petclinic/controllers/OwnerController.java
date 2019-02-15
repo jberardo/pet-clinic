@@ -18,6 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 import io.joca.petclinic.models.Owner;
 import io.joca.petclinic.services.OwnerService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb. 10, 2019
+ *
+ */
 @RequestMapping("/owners")
 @Controller
 public class OwnerController {
