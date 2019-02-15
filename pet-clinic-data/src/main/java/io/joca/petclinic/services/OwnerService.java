@@ -1,5 +1,7 @@
 package io.joca.petclinic.services;
 
+import java.util.List;
+
 import io.joca.petclinic.models.Owner;
 
 /**
@@ -10,4 +12,5 @@ import io.joca.petclinic.models.Owner;
  */
 public interface OwnerService extends CrudService<Owner, Long> {
     Owner findByLastName(String lastname);
+    List<Owner> findAllByLastNameLike(String lastName);
 }

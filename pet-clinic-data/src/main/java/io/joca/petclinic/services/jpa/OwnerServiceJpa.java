@@ -1,6 +1,7 @@
 package io.joca.petclinic.services.jpa;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -59,4 +60,9 @@ public class OwnerServiceJpa implements OwnerService {
 	public Owner findByLastName(String lastname) {
 		return ownerRepository.findByLastname(lastname);
 	}
+	
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return ownerRepository.findAllByLastnameLike(lastName);
+    }
 }
