@@ -5,6 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb. 07, 2019
+ *
+ */
 @SpringBootApplication
 public class DemoApplication {
 

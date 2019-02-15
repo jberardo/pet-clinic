@@ -18,6 +18,12 @@ import io.joca.petclinic.services.SpecialtyService;
 import io.joca.petclinic.services.VetService;
 import io.joca.petclinic.services.VisitService;
 
+/**
+ * 
+ * @author Joao Berardo
+ * @since Feb. 07, 2019
+ *
+ */
 @Component
 public class DataLoader implements CommandLineRunner {
 
