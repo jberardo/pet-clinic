@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import io.joca.petclinic.models.Pet;
 import io.joca.petclinic.repositories.PetRepository;
 import io.joca.petclinic.services.PetService;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * 

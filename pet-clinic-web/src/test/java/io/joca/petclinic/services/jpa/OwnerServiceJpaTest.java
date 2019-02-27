@@ -37,7 +37,7 @@ class OwnerServiceJpaTest {
 	private Owner returnOwner;
 	
 	@BeforeEach
-	void setUp() throws Exception {
+	protected void setUp() throws Exception {
 		Owner o = new Owner();
 		o.setId(1L);
 		o.setLastname(LAST_NAME);
@@ -45,7 +45,7 @@ class OwnerServiceJpaTest {
 	}
 
 	@Test
-	void testFindAll() {
+	protected void testFindAll() {
 
 		Set<Owner> ownersSet = new HashSet<>();
 		ownersSet.add(Owner.builder().id(1L).build());
@@ -60,7 +60,7 @@ class OwnerServiceJpaTest {
 	}
 
 	@Test
-	void testFindById() {
+	protected void testFindById() {
 		
 		when(repository.findById(anyLong())).thenReturn(Optional.of(returnOwner));
 		
@@ -70,7 +70,7 @@ class OwnerServiceJpaTest {
 	}
 	
 	@Test
-	void testFindByIdNotFound() {
+	protected void testFindByIdNotFound() {
 		
 		when(repository.findById(anyLong())).thenReturn(Optional.empty());
 		Owner o = service.findById(1L);
@@ -79,7 +79,7 @@ class OwnerServiceJpaTest {
 	}
 
 	@Test
-	void testSave() {
+	protected void testSave() {
 		
 		Owner ownerToSave = Owner.builder().id(1L).build();
 		when(repository.save(any())).thenReturn(returnOwner);
@@ -89,7 +89,7 @@ class OwnerServiceJpaTest {
 	}
 
 	@Test
-	void testDelete() {
+	protected void testDelete() {
 		
 		service.delete(returnOwner);
 		
@@ -97,7 +97,7 @@ class OwnerServiceJpaTest {
 	}
 	
 	@Test
-	void testDeleteById() {
+	protected void testDeleteById() {
 		
 		service.deleteById(1L);
 		
@@ -105,7 +105,7 @@ class OwnerServiceJpaTest {
 	}
 
 	@Test
-	void testFindByLastName() {
+	protected void testFindByLastName() {
 
 		when(repository.findByLastname(any())).thenReturn(returnOwner);
 		Owner smith = service.findByLastName(LAST_NAME);

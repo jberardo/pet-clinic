@@ -44,9 +44,6 @@ public class VisitControllerTest {
     @Mock
     private PetService petService;
 
-    @Mock
-    private VisitService visitService;
-
     @InjectMocks
     private VisitController visitController;
 
