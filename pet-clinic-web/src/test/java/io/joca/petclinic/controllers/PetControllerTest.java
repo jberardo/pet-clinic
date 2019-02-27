@@ -53,7 +53,7 @@ public class PetControllerTest {
     private Set<PetType> petTypes;
 
     @BeforeEach
-    void setUp() {
+    protected void setUp() {
         owner = Owner.builder().id(1l).build();
 
         petTypes = new HashSet<>();
@@ -66,7 +66,7 @@ public class PetControllerTest {
     }
 
     @Test
-    void initCreationForm() throws Exception {
+    protected void initCreationForm() throws Exception {
         when(ownerService.findById(anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
@@ -78,7 +78,7 @@ public class PetControllerTest {
     }
 
     @Test
-    void processCreationForm() throws Exception {
+    protected void processCreationForm() throws Exception {
         when(ownerService.findById(anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
@@ -90,7 +90,7 @@ public class PetControllerTest {
     }
 
     @Test
-    void initUpdateForm() throws Exception {
+    protected void initUpdateForm() throws Exception {
         when(ownerService.findById(anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
         when(petService.findById(anyLong())).thenReturn(Pet.builder().id(2L).build());
@@ -103,7 +103,7 @@ public class PetControllerTest {
     }
 
     @Test
-    void processUpdateForm() throws Exception {
+    protected void processUpdateForm() throws Exception {
         when(ownerService.findById(anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
@@ -115,17 +115,17 @@ public class PetControllerTest {
     }
 
     @Test
-    void populatePetTypes() {
+    protected void populatePetTypes() {
         //TODO implement populatePetTypes
     }
 
     @Test
-    void findOwner() {
+    protected void findOwner() {
         //TODO implement findOwner
     }
 
     @Test
-    void initOwnerBinder() {
+    protected void initOwnerBinder() {
         //TODO implement initOwnerBinder
-}
+    }
 }

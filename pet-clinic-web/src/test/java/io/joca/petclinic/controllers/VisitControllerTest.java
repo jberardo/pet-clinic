@@ -57,7 +57,7 @@ public class VisitControllerTest {
     private URI visitsUri;
 
     @BeforeEach
-    void setUp() {
+    protected void setUp() {
         Long petId = 1L;
         Long ownerId = 1L;
         when(petService.findById(anyLong()))
@@ -88,7 +88,7 @@ public class VisitControllerTest {
     }
 
     @Test
-    void initNewVisitForm() throws Exception {
+    protected void initNewVisitForm() throws Exception {
         mockMvc.perform(get(visitsUri))
                 .andExpect(status().isOk())
                 .andExpect(view().name(PETS_CREATE_OR_UPDATE_VISIT_FORM))
@@ -97,7 +97,7 @@ public class VisitControllerTest {
 
 
     @Test
-    void processNewVisitForm() throws Exception {
+    protected void processNewVisitForm() throws Exception {
         mockMvc.perform(post(visitsUri)
                             .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                             .param("date","2018-11-11")

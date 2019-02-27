@@ -39,11 +39,11 @@ class OwnerControllerTest {
 	@InjectMocks
 	private OwnerController controller;
 	
-	private Set<Owner> owners;
 	private MockMvc mock;
 	
 	@BeforeEach
-	void setUp() {
+	protected void setUp() {
+		Set<Owner> owners;
 		owners = new HashSet<Owner>();
 		
 		owners.add(Owner.builder().id(1L).build());
@@ -56,7 +56,7 @@ class OwnerControllerTest {
 
 
     @Test
-    void findOwners() throws Exception {
+    protected void findOwners() throws Exception {
     	mock.perform(get("/owners/find"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/findOwners"))
@@ -66,7 +66,7 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processFindFormReturnMany() throws Exception {
+    protected void processFindFormReturnMany() throws Exception {
         when(service.findAllByLastNameLike(anyString()))
                 .thenReturn(Arrays.asList(Owner.builder().id(1l).build(),
                         Owner.builder().id(2l).build()));
@@ -78,7 +78,7 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processFindFormReturnOne() throws Exception {
+    protected void processFindFormReturnOne() throws Exception {
         when(service.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1l).build()));
 
         mock.perform(get("/owners"))
@@ -87,7 +87,7 @@ class OwnerControllerTest {
     }
     
     @Test
-    void processFindFormEmptyReturnMany() throws Exception {
+    protected void processFindFormEmptyReturnMany() throws Exception {
     	when(service.findAllByLastNameLike(anyString())).thenReturn(
     			Arrays.asList(Owner.builder().id(1L).build(),
     					Owner.builder().id(2L).build()));
@@ -100,7 +100,7 @@ class OwnerControllerTest {
     }
 
     @Test
-    void displayOwner() throws Exception {
+    protected void displayOwner() throws Exception {
         when(service.findById(anyLong())).thenReturn(Owner.builder().id(1l).build());
 
         mock.perform(get("/owners/123"))
@@ -110,7 +110,7 @@ class OwnerControllerTest {
     }
     
     @Test
-    void initCreationForm() throws Exception {
+    protected void initCreationForm() throws Exception {
         mock.perform(get("/owners/new"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/createOrUpdateOwnerForm"))
@@ -120,7 +120,7 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processCreationForm() throws Exception {
+    protected void processCreationForm() throws Exception {
         when(service.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1l).build());
 
         mock.perform(post("/owners/new"))
@@ -132,7 +132,7 @@ class OwnerControllerTest {
     }
 
     @Test
-    void initUpdateOwnerForm() throws Exception {
+    protected void initUpdateOwnerForm() throws Exception {
         when(service.findById(anyLong())).thenReturn(Owner.builder().id(1l).build());
 
         mock.perform(get("/owners/1/edit"))
@@ -144,7 +144,7 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processUpdateOwnerForm() throws Exception {
+    protected void processUpdateOwnerForm() throws Exception {
         when(service.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1l).build());
 
 
