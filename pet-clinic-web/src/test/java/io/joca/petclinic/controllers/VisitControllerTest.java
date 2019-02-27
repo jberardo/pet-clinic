@@ -42,13 +42,13 @@ public class VisitControllerTest {
     private static final String YET_ANOTHER_VISIT_DESCRIPTION = "yet another visit";
 
     @Mock
-    PetService petService;
+    private PetService petService;
 
     @Mock
-    VisitService visitService;
+    private VisitService visitService;
 
     @InjectMocks
-    VisitController visitController;
+    private VisitController visitController;
 
     private MockMvc mockMvc;
 

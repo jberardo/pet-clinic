@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import io.joca.petclinic.models.Visit;
 import io.joca.petclinic.repositories.VisitRepository;
 import io.joca.petclinic.services.VisitService;
-import io.joca.petclinic.services.map.AbstractMapService;
 
 /**
  * 

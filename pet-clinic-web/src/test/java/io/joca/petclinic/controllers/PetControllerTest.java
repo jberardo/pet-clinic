@@ -36,21 +36,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(MockitoExtension.class)
 public class PetControllerTest {
     @Mock
-    PetService petService;
+    private PetService petService;
 
     @Mock
-    OwnerService ownerService;
+    private OwnerService ownerService;
 
     @Mock
-    PetTypeService petTypeService;
+    private PetTypeService petTypeService;
 
     @InjectMocks
-    PetController petController;
+    private PetController petController;
 
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-    Owner owner;
-    Set<PetType> petTypes;
+    private Owner owner;
+    private Set<PetType> petTypes;
 
     @BeforeEach
     void setUp() {

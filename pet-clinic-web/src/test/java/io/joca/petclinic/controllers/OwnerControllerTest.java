@@ -34,13 +34,13 @@ import io.joca.petclinic.services.OwnerService;
 class OwnerControllerTest {
 
 	@Mock
-	OwnerService service;
+	private OwnerService service;
 	
 	@InjectMocks
-	OwnerController controller;
+	private OwnerController controller;
 	
-	Set<Owner> owners;
-	MockMvc mock;
+	private Set<Owner> owners;
+	private MockMvc mock;
 	
 	@BeforeEach
 	void setUp() {
