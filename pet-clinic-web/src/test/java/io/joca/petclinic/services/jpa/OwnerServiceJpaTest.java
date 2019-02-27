@@ -29,12 +29,12 @@ class OwnerServiceJpaTest {
 	private static final String LAST_NAME = "Smith";
 
 	@InjectMocks
-	OwnerServiceJpa service;
+	private OwnerServiceJpa service;
 	
 	@Mock
-	OwnerRepository repository;
+	private OwnerRepository repository;
 	
-	Owner returnOwner;
+	private Owner returnOwner;
 	
 	@BeforeEach
 	void setUp() throws Exception {

@@ -22,7 +22,7 @@ class PetMapServiceTest {
     private final Long petId = 1L;
 
     @BeforeEach
-    void setUp() {
+    private void setUp() {
 
         petMapService = new PetServiceMap();
 
@@ -30,7 +30,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void findAll() {
+    private void findAll() {
 
         Set<Pet> petSet = petMapService.findAll();
 
@@ -38,7 +38,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void findByIdExistingId() {
+    private void findByIdExistingId() {
 
         Pet pet = petMapService.findById(petId);
 
@@ -46,7 +46,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void findByIdNotExistingId() {
+    private void findByIdNotExistingId() {
 
         Pet pet = petMapService.findById(5L);
 
@@ -54,7 +54,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void findByIdNullId() {
+    private void findByIdNullId() {
 
         Pet pet = petMapService.findById(null);
 
@@ -62,7 +62,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void saveExistingId() {
+    private void saveExistingId() {
 
         Long id = 2L;
 
@@ -74,7 +74,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void saveDuplicateId() {
+    private void saveDuplicateId() {
 
         Long id = 1L;
 
@@ -87,7 +87,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void saveNoId() {
+    private void saveNoId() {
 
         Pet savedPet = petMapService.save(Pet.builder().build());
 
@@ -97,7 +97,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void deletePet() {
+    private void deletePet() {
 
         petMapService.delete(petMapService.findById(petId));
 
@@ -106,7 +106,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void deleteWithWrongId() {
+    private void deleteWithWrongId() {
 
         Pet pet = Pet.builder().id(5L).build();
 
@@ -116,7 +116,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void deleteWithNullId() {
+    private void deleteWithNullId() {
 
         Pet pet = Pet.builder().build();
 
@@ -126,7 +126,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void deleteNull() {
+    private void deleteNull() {
 
         petMapService.delete(null);
 
@@ -135,7 +135,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void deleteByIdCorrectId() {
+    private void deleteByIdCorrectId() {
 
         petMapService.deleteById(petId);
 
@@ -143,7 +143,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void deleteByIdWrongId() {
+    private void deleteByIdWrongId() {
 
         petMapService.deleteById(5L);
 
@@ -151,7 +151,7 @@ class PetMapServiceTest {
     }
 
     @Test
-    void deleteByIdNullId() {
+    private void deleteByIdNullId() {
 
         petMapService.deleteById(null);
 

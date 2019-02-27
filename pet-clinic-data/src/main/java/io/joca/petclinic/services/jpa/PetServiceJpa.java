@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
  * @since Feb 11 2019
  *
  */
-@Slf4j
 @Service
 @Profile("jpa")
 public class PetServiceJpa implements PetService {

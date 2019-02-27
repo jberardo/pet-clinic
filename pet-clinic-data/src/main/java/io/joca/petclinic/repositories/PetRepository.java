@@ -1,7 +1,6 @@
 package io.joca.petclinic.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import io.joca.petclinic.models.Pet;
 

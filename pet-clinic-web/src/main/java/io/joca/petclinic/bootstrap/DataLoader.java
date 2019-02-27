@@ -12,7 +12,6 @@ import io.joca.petclinic.models.Specialty;
 import io.joca.petclinic.models.Vet;
 import io.joca.petclinic.models.Visit;
 import io.joca.petclinic.services.OwnerService;
-import io.joca.petclinic.services.PetService;
 import io.joca.petclinic.services.PetTypeService;
 import io.joca.petclinic.services.SpecialtyService;
 import io.joca.petclinic.services.VetService;
@@ -61,8 +60,8 @@ public class DataLoader implements CommandLineRunner {
         Specialty savedSurgery = specialtyService.save(
         		Specialty.builder().description("Surgery").build());
 
-        Specialty savedDentistry = specialtyService.save(
-        		Specialty.builder().description("Dentistry").build());
+//        Specialty savedDentistry = specialtyService.save(
+//        		Specialty.builder().description("Dentistry").build());
 
         Owner owner1 = new Owner();
         owner1.setFirstname("Michael");

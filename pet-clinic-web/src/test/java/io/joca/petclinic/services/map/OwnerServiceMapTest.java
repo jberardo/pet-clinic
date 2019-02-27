@@ -22,10 +22,10 @@ class OwnerServiceMapTest {
 	private final String OWNER_LNAME = "Doe";
 	
 	
-	OwnerServiceMap service;
+	private OwnerServiceMap service;
 	
 	@BeforeEach
-	void setUp() throws Exception {
+	private void setUp() throws Exception {
 		service = new OwnerServiceMap(new PetTypeServiceMap(), new PetServiceMap());
 		
 		Owner o = new Owner();
@@ -37,13 +37,13 @@ class OwnerServiceMapTest {
 	}
 
 	@Test
-	void testFindAll() {
+	private void testFindAll() {
 		Set<Owner> owners = service.findAll();
 		assertEquals(1, owners.size());
 	}
 
 	@Test
-	void testFindByIdLong() {
+	private void testFindByIdLong() {
 		Owner owner = service.findById(OWNER_ID);
 		
 		assertEquals(OWNER_ID, owner.getId());
@@ -51,7 +51,7 @@ class OwnerServiceMapTest {
 	}
 
 	@Test
-	void testSaveOwnerExistingId() {
+	private void testSaveOwnerExistingId() {
 		Owner o = new Owner();
 		o.setId(OWNER_ID);
 		o.setFirstname(OWNER_NAME);
@@ -64,7 +64,7 @@ class OwnerServiceMapTest {
 	}
 	
 	@Test
-	void testSaveOwnerNoId() {
+	private void testSaveOwnerNoId() {
 		Owner owner = service.save(Owner.builder().build());
 		
 		assertNotNull(owner);
@@ -72,21 +72,21 @@ class OwnerServiceMapTest {
 	}
 
 	@Test
-	void testDeleteOwner() {
+	private void testDeleteOwner() {
 		service.delete(service.findById(OWNER_ID));
 		
 		assertEquals(0, service.findAll().size());
 	}
 
 	@Test
-	void testDeleteByIdLong() {
+	private void testDeleteByIdLong() {
 		service.deleteById(OWNER_ID);
 		
 		assertEquals(0, service.findAll().size());
 	}
 
 	@Test
-	void testFindByLastName() {
+	private void testFindByLastName() {
 		Owner owner = service.findByLastName(OWNER_LNAME);
 
 		assertNotNull(owner);
@@ -94,7 +94,7 @@ class OwnerServiceMapTest {
 	}
 	
 	@Test
-	void testFindByLastNameNotFound() {
+	private void testFindByLastNameNotFound() {
 		Owner owner = service.findByLastName("foo");
 
 		assertNull(owner);

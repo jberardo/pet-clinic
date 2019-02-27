@@ -29,6 +29,18 @@ import lombok.Setter;
 @Table(name = "owners")
 public class Owner extends Person {
 
+	@Column(name = "address")
+	private String address;
+	
+	@Column(name = "city")
+	private String city;
+	
+	@Column(name = "telephone")
+	private String phone;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+	private Set<Pet> pets = new HashSet<>();
+
 	@Builder
 	public Owner(Long id, String firstname, String lastname,
 			String address, String city, String phone, Set<Pet> pets) {
@@ -42,19 +54,6 @@ public class Owner extends Person {
             this.pets = pets;
         }
 	}
-	
-	@Column(name = "address")
-	private String address;
-	
-	@Column(name = "city")
-	private String city;
-	
-	@Column(name = "telephone")
-	private String phone;
-	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-	private Set<Pet> pets = new HashSet<>();
-	
 
     /**
      * Return the Pet with the given name, or null if none found for this Owner.
